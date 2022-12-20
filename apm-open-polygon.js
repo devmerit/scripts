@@ -82,8 +82,7 @@ module.exports = async (
   const receipt = await apmFactory.newAPM(tldHash, labelHash, owner)
 
   log('=========')
-  const openAPMAddr = receipt.logs.filter(l => l.event == 'DeployAPM')[0].args
-    .apm
+  const openAPMAddr = receipt.logs.filter(l => l.event == 'DeployAPM')[0].args.apm
   log('# Open APM:')
   log('Address:', openAPMAddr)
   log('Transaction hash:', receipt.tx)
